@@ -18,7 +18,7 @@
 		gap: 20px;
 
 		@include breakpoints.lg {
-				display: none;
+			display: none;
 		}
 
 		.nav-list-item {
@@ -38,7 +38,7 @@
     display: none;
 
 		@include breakpoints.lg {
-				display: flex;
+			display: flex;
 		}
 
 		.menu-open {
