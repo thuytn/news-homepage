@@ -1,0 +1,55 @@
+@use "../abstracts/colors";
+@use "../abstracts/variables";
+@use "../abstracts/breakpoints";
+
+.sidebar {
+  padding: 25px;
+  background-color: colors.$very-dark-blue;
+
+  @include breakpoints.lg {
+    margin:30px 0;
+    padding: 20px;
+  }
+  .sidebar-title {
+    font-size: variables.$fs-title-2;
+    font-weight: 800;
+    color: colors.$soft-orange;
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+
+  .sidebar-list {
+    display: flex;
+    flex-direction: column;
+
+    .sidebar-list-item {
+      padding: 30px 0;
+      border-bottom: 1px solid colors.$dark-grayish-blue;
+
+      .sidebar-subtitle {
+        margin-bottom: 15px;
+
+        a {
+          font-size: variables.$fs-subtitle-sidebar;
+          font-weight: 800;
+          color: colors.$off-white;
+          transition: color 500ms;
+
+          &:hover {
+            color: colors.$soft-orange;
+          }
+        }
+      }
+      .sidebar-desc {
+        color: colors.$grayish-blue;
+        font-size: variables.$fs-normal;
+        line-height: variables.$line-h-text;
+      }
+    }
+
+    .sidebar-list-item:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+  }
+}

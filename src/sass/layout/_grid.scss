@@ -1,0 +1,38 @@
+@use "../abstracts/breakpoints";
+
+.grid-container {
+  display: grid;
+  max-width: 1110px;
+  padding: 90px 0;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "nav nav nav"
+    "main-news main-news sidebar"
+    "sub-news sub-news sub-news";
+  row-gap: 60px;
+  column-gap: 30px;
+
+  @include breakpoints.lg {
+    padding: 30px 20px;
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "main-news"
+      "sidebar"
+      "sub-news";
+    row-gap: 30px;
+  }
+}
+.nav {
+  grid-area: nav;
+}
+.main-news {
+  grid-area: main-news;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.sub-news {
+  grid-area: sub-news;
+}

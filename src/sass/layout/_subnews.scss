@@ -1,0 +1,57 @@
+@use "../abstracts/colors";
+@use "../abstracts/variables";
+@use "../abstracts/breakpoints";
+
+.sub-news {
+  .sub-news-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 15px;
+
+    @include breakpoints.lg {
+      flex-direction: column;
+      margin-top: 0;
+      gap: 35px;
+    }
+
+    .sub-news-list-item {
+      display: flex;
+      flex: 1;
+      gap: 25px;
+
+      .sub-news-img {
+        max-width: 100px;
+      }
+      .sub-news-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        span {
+          font-size: 32px;
+          font-weight: 700;
+          color: colors.$grayish-blue;
+        }
+        
+        .sub-news-title {
+          a {
+            font-size: variables.$fs-subtitle;
+            font-weight: 700;
+            color: colors.$very-dark-blue;
+            transition: color 500ms;
+
+            &:hover {
+              color: colors.$soft-red;
+            }
+          }
+        }
+        .sub-news-desc {
+          line-height: variables.$line-h-text;
+          color: colors.$dark-grayish-blue;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

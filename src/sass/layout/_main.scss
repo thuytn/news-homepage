@@ -1,0 +1,77 @@
+@use "../abstracts/colors";
+@use "../abstracts/variables";
+@use "../abstracts/breakpoints";
+
+.main-news {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .img-web {
+    width: 100%;
+    object-fit: cover;
+
+    @include breakpoints.lg {
+      display: none;
+    }
+  }
+
+  .img-mobile {
+    display: none;
+    width: 100%;
+    object-fit: cover;
+
+    @include breakpoints.lg {
+      display: block;
+    }
+  }
+
+  .text-content {
+    display: flex;
+    gap: 30px;
+
+    @include breakpoints.lg {
+      flex-direction: column;
+      gap: 15px;
+    }
+    .title {
+      flex: 1;
+      font-size: variables.$fs-title-1;
+      font-weight: 800;
+    }
+    
+    .right-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+
+      @include breakpoints.lg {
+        gap: 20px;
+      }
+
+      .desc {
+        color: colors.$dark-grayish-blue;
+        line-height: variables.$line-h-text;
+      }
+
+      button {
+        border: none;
+        padding: 15px 30px;
+        font-weight: 700;
+        font-size: variables.$fs-normal;
+        letter-spacing: 4px;
+        color: colors.$off-white;
+        background-color: colors.$soft-red;
+        transition: background-color 500ms;
+
+        &:hover {
+          background-color: colors.$very-dark-blue;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
